@@ -23,37 +23,38 @@ public class SpringBootJpaDemoApplication implements CommandLineRunner{
 		
 		selectList();
 		
-		select(2L);
-		
-		delete(3L);
-		selectList();
-		
-		save(new Emp().setEname("park"));
-		selectList();
-		
-		update(4L, "choi");
-		selectList();
+//		select(2L);
+//		
+//		delete(3L);
+//		selectList();
+//		
+////		save(new Emp().setEname("park"));
+//		save(new Emp().setUser(new User(null, "park")));
+//		selectList();
+//		
+//		update(4L, "choi");
+//		selectList();
 		
 	}
 
-	private void update(Long empno, String ename) {
-		Emp e = empRepository.findOne(empno);
-		e.setEname(ename);
-		empRepository.save(e);
-	}
-
-	private void save(Emp emp) {
-		Emp e = empRepository.save(emp);
-	}
-
-	private void select(Long empno) {
-		Emp emp = empRepository.findOne(empno);
-		System.out.println(emp);
-	}
-
-	private void delete(Long empno) {
-		empRepository.delete(empno);
-	}
+//	private void update(Long empno, String ename) {
+//		Emp e = empRepository.findOne(empno);
+//		e.setEname(ename);
+//		empRepository.save(e);
+//	}
+//
+//	private void save(Emp emp) {
+//		Emp e = empRepository.save(emp);
+//	}
+//
+//	private void select(Long empno) {
+//		Emp emp = empRepository.findOne(empno);
+//		System.out.println(emp);
+//	}
+//
+//	private void delete(Long empno) {
+//		empRepository.delete(empno);
+//	}
 
 	private void selectList() {
 		List<Emp> emps = empRepository.findAll();
