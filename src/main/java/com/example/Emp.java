@@ -1,28 +1,20 @@
 package com.example;
 
-import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.IdClass;
+import javax.persistence.Table;
 
 @Entity
+@Table
+@IdClass(User.class)
 public class Emp {
 	
-	@EmbeddedId
-	private User user;
+	@Id
+	@GeneratedValue
+	private Long empno;
 	
-	public Emp() {
-	}
-
-	public Emp(User user) {
-		super();
-		this.user = user;
-	}
-
-	public User getUser() {
-		return user;
-	}
-
-	public void setUser(User user) {
-		this.user = user;
-	}
+	private String ename;
 	
 }
